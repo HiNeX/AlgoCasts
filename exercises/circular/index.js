@@ -12,6 +12,19 @@
 //   c.next = b;
 //   circular(l) // true
 
-function circular(list) {}
+function circular(list, ca = []) {
+    const c = ca
+
+    if (list.hasOwnProperty('head')) {
+        return circular(list.head)
+    }
+
+    if (list.hasOwnProperty('next') && !c.includes(list.data)) {
+        c.push(list.data)
+        return list.next !== null ? circular(list.next, c) : false
+    }
+
+    return true
+}
 
 module.exports = circular;
