@@ -11,6 +11,10 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+function fromLast(list, n) {
+    const position = list.size() - (n + 1)
+
+    return list.getAt(position)
+}
 
 module.exports = fromLast;
